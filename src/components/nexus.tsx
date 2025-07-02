@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+import { Card, CardContent } from './ui/card'
 import {
   BridgeAndExecuteButton,
   BridgeButton,
@@ -12,9 +12,6 @@ import { parseUnits } from 'viem'
 const Nexus = () => {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Nexus</CardTitle>
-      </CardHeader>
       <CardContent>
         <div className="flex flex-col justify-center items-center gap-y-4">
           <div className="w-full flex items-center gap-x-4">

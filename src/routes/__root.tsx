@@ -1,5 +1,4 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { PrivyProvider } from '@privy-io/react-auth'
 import { NexusProvider } from 'avail-nexus-sdk'
 import {
@@ -13,52 +12,46 @@ import {
 } from 'viem/chains'
 import Header from '@/components/header'
 
+const privyAppId = import.meta.env.VITE_PRIVY_APP_ID
 export const Route = createRootRoute({
-  component: () => (
-    <PrivyProvider
-      appId={import.meta.env.VITE_PRIVY_APP_ID}
-      clientId={import.meta.env.VITE_PRIVY_CLIENT_ID}
-      config={{
-        // Customize Privy's appearance in your app
-        appearance: {
-          theme: 'light',
-          accentColor: '#676FFF',
-          logo: 'https://your-logo-url.com/logo.png',
-        },
-        // Create embedded wallets for users who don't have a wallet
-        embeddedWallets: {
-          ethereum: {
-            createOnLogin: 'users-without-wallets', // or 'all-users'
+  component: () => {
+    return (
+      <PrivyProvider
+        appId={privyAppId}
+        config={{
+          appearance: {
+            theme: 'light',
+            accentColor: '#676FFF',
           },
-        },
-        // Configure available login methods
-        loginMethods: ['email', 'wallet', 'sms', 'google', 'apple', 'github'],
-        // Configure wallet options
-        externalWallets: {
-          coinbaseWallet: {
-            connectionOptions: 'all',
+          embeddedWallets: {
+            createOnLogin: 'users-without-wallets',
           },
-          walletConnect: {
-            enabled: true,
+          loginMethods: ['email', 'wallet'],
+          externalWallets: {
+            coinbaseWallet: {
+              connectionOptions: 'all',
+            },
+            walletConnect: {
+              enabled: true,
+            },
           },
-        },
-        supportedChains: [
-          base,
-          polygon,
-          arbitrum,
-          mainnet,
-          optimism,
-          scroll,
-          avalanche,
-        ],
-        defaultChain: mainnet,
-      }}
-    >
-      <NexusProvider config={{ debug: true }}>
-        <Header />
-        <Outlet />
-        <TanStackRouterDevtools />
-      </NexusProvider>
-    </PrivyProvider>
-  ),
+          supportedChains: [
+            base,
+            polygon,
+            arbitrum,
+            mainnet,
+            optimism,
+            scroll,
+            avalanche,
+          ],
+          defaultChain: mainnet,
+        }}
+      >
+        <NexusProvider>
+          <Header />
+          <Outlet />
+        </NexusProvider>
+      </PrivyProvider>
+    )
+  },
 })

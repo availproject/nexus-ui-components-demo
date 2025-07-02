@@ -8,7 +8,7 @@ import { useNexus } from 'avail-nexus-sdk'
 import { useEffect, useState } from 'react'
 
 export default function WalletConnection() {
-  const { connectWallet, login } = usePrivy()
+  const { connectWallet, login, authenticated } = usePrivy()
   const { wallets } = useWallets()
   const { setProvider, provider } = useNexus()
   const [isConnecting, setIsConnecting] = useState(false)
@@ -25,8 +25,11 @@ export default function WalletConnection() {
   const connectExternalWallet = async () => {
     try {
       setIsConnecting(true)
-      login()
-      connectWallet()
+      if (!authenticated) {
+        login()
+      } else {
+        connectWallet()
+      }
     } catch (error) {
       console.error('Failed to connect wallet:', error)
     } finally {
@@ -51,7 +54,11 @@ export default function WalletConnection() {
           size="lg"
           className="min-w-[200px]"
         >
-          {wallets?.length > 0 ? 'Connected' : 'Connect Wallet'}
+          {isConnecting
+            ? 'Connecting...'
+            : authenticated && wallets?.length > 0
+              ? 'Connected'
+              : 'Connect Wallet & Login'}
         </Button>
       </div>
     </div>
