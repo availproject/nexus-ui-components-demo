@@ -5,7 +5,7 @@ import {
   TOKEN_CONTRACT_ADDRESSES,
   TOKEN_METADATA,
   TransferButton,
-} from 'avail-nexus-sdk'
+} from '@avail-project/nexus'
 import { Button } from './ui/button'
 import { parseUnits } from 'viem'
 

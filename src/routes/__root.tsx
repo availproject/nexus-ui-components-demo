@@ -1,6 +1,6 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { PrivyProvider } from '@privy-io/react-auth'
-import { NexusProvider } from 'avail-nexus-sdk'
+import { NexusProvider } from '@avail-project/nexus'
 import {
   base,
   polygon,

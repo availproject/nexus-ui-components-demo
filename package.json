@@ -16,6 +16,7 @@
     "check": "prettier --write . && eslint --fix"
   },
   "dependencies": {
+    "@avail-project/nexus": "^0.0.1",
     "@privy-io/react-auth": "^2.17.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.0.6",
@@ -23,7 +24,6 @@
     "@tanstack/react-router-devtools": "^1.121.2",
     "@tanstack/router-plugin": "^1.121.2",
     "@types/node": "^24.0.4",
-    "avail-nexus-sdk": "^0.0.10",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.523.0",

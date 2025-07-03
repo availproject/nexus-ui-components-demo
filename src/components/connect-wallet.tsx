@@ -4,7 +4,7 @@ import {
   type ConnectedWallet,
 } from '@privy-io/react-auth'
 import { Button } from '@/components/ui/button'
-import { useNexus } from 'avail-nexus-sdk'
+import { useNexus } from '@avail-project/nexus'
 import { useEffect, useState } from 'react'
 
 export default function WalletConnection() {
