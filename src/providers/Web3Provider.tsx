@@ -1,11 +1,10 @@
 import { PrivyProvider } from '@privy-io/react-auth'
-import { NexusProvider, type NexusNetwork } from '@avail-project/nexus'
+import { NexusProvider } from '@avail-project/nexus'
 import {
   base,
   polygon,
   arbitrum,
   optimism,
-  mainnet,
   scroll,
   avalanche,
   sepolia,
@@ -14,20 +13,6 @@ import {
   optimismSepolia,
   polygonAmoy,
 } from 'viem/chains'
-import {
-  createContext,
-  useContext,
-  type Dispatch,
-  type SetStateAction,
-} from 'react'
-
-const Web3Context = createContext<{
-  network: NexusNetwork | undefined
-  setNetwork: Dispatch<SetStateAction<NexusNetwork | undefined>>
-}>({
-  network: 'mainnet',
-  setNetwork: () => {},
-})
 
 const privyAppId = import.meta.env.VITE_PRIVY_APP_ID
 const Web3Provider = ({ children }: { children: React.ReactNode }) => {
@@ -55,7 +40,6 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
           base,
           polygon,
           arbitrum,
-          mainnet,
           optimism,
           scroll,
           avalanche,
@@ -65,7 +49,7 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
           optimismSepolia,
           polygonAmoy,
         ],
-        defaultChain: mainnet,
+        defaultChain: optimism,
       }}
     >
       <NexusProvider
@@ -77,14 +61,6 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
       </NexusProvider>
     </PrivyProvider>
   )
-}
-
-export const useWeb3 = () => {
-  const context = useContext(Web3Context)
-  if (!context) {
-    throw new Error('useWeb3 must be used within a Web3Provider')
-  }
-  return context
 }
 
 export default Web3Provider
