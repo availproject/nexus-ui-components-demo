@@ -52,7 +52,13 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
         defaultChain: optimism,
       }}
     >
-      <NexusProvider>{children}</NexusProvider>
+      <NexusProvider
+        config={{
+          network: 'testnet',
+        }}
+      >
+        {children}
+      </NexusProvider>
     </PrivyProvider>
   )
 }
