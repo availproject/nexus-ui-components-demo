@@ -25,9 +25,4 @@ export default defineConfig({
     },
   },
   envPrefix: ['VITE_'],
-  build: {
-    rollupOptions: {
-      external: ['@wagmi/core'],
-    },
-  },
 })
