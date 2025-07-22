@@ -1,5 +1,5 @@
 import { PrivyProvider } from '@privy-io/react-auth'
-import { NexusProvider } from '@avail-project/nexus'
+import { NexusProvider } from '@avail-project/nexus/ui'
 import {
   base,
   polygon,
@@ -7,11 +7,13 @@ import {
   optimism,
   scroll,
   avalanche,
-  sepolia,
   baseSepolia,
   arbitrumSepolia,
   optimismSepolia,
   polygonAmoy,
+  mainnet,
+  sophon,
+  kaia,
 } from 'viem/chains'
 
 const privyAppId = import.meta.env.VITE_PRIVY_APP_ID
@@ -37,13 +39,15 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
           },
         },
         supportedChains: [
+          mainnet,
+          sophon,
+          kaia,
           base,
           polygon,
           arbitrum,
           optimism,
           scroll,
           avalanche,
-          sepolia,
           baseSepolia,
           arbitrumSepolia,
           optimismSepolia,

@@ -4,7 +4,7 @@ import {
   type ConnectedWallet,
 } from '@privy-io/react-auth'
 import { Button } from '@/components/ui/button'
-import { useNexus } from '@avail-project/nexus'
+import { useNexus } from '@avail-project/nexus/ui'
 import { useEffect, useState } from 'react'
 
 export default function WalletConnection() {
@@ -50,7 +50,7 @@ export default function WalletConnection() {
       <div className="text-center">
         <Button
           onClick={connectExternalWallet}
-          disabled={isConnecting}
+          disabled={isConnecting || (authenticated && wallets?.length > 0)}
           size="lg"
           className="min-w-[200px]"
         >
