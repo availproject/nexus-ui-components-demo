@@ -1,4 +1,3 @@
-import { Link } from '@tanstack/react-router'
 import { usePrivy, useWallets } from '@privy-io/react-auth'
 import { Button } from '@/components/ui/button'
 
@@ -22,16 +21,14 @@ export default function Header() {
   }
 
   return (
-    <header className="p-4 flex gap-4 bg-white text-black justify-between items-center shadow-md">
+    <header className="px-4 py-2 flex gap-x-4 text-black justify-between items-center border-b border-gray-300">
       <nav className="flex flex-row">
-        <div className="px-2 font-bold text-lg">
-          <Link to="/">Avail Nexus</Link>
-        </div>
+        <img src="/avail-logo.svg" alt="Avail Logo" />
       </nav>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-x-4">
         {ready && wallets.length > 0 && authenticated && (
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-x-4">
             <div className="text-sm">
               <span className="text-gray-600">Connected as:</span>
               <div className="font-medium">

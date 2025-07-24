@@ -14,11 +14,11 @@ import { parseUnits } from 'viem'
 
 const Nexus = () => {
   return (
-    <Card>
+    <Card className="border-none shadow-none">
       <CardContent>
         <div className="flex flex-col justify-center items-center gap-y-4">
           <div className="w-full flex items-center gap-x-4">
-            <div className="bg-white rounded-lg border p-6 shadow-sm text-center w-1/2">
+            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/2">
               <h3 className="text-lg font-semibold mb-4">Bridge Tokens</h3>
               <BridgeButton>
                 {({ onClick, isLoading }) => (
@@ -28,21 +28,21 @@ const Nexus = () => {
                       onClick()
                     }}
                     disabled={isLoading}
-                    className="w-full"
+                    className="w-full font-bold rounded-lg"
                   >
                     {isLoading ? 'Loading...' : 'Open Bridge'}
                   </Button>
                 )}
               </BridgeButton>
             </div>
-            <div className="bg-white rounded-lg border p-6 shadow-sm text-center w-1/2">
+            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/2">
               <h3 className="text-lg font-semibold mb-4">Transfer Tokens</h3>
               <TransferButton>
                 {({ onClick, isLoading }) => (
                   <Button
                     onClick={onClick}
                     disabled={isLoading}
-                    className="w-full"
+                    className="w-full font-bold rounded-lg"
                   >
                     {isLoading ? 'Loading...' : 'Open Transfer'}
                   </Button>
@@ -51,9 +51,9 @@ const Nexus = () => {
             </div>
           </div>
           <div className="w-full flex items-center gap-x-4">
-            <div className="bg-white rounded-lg border p-6 shadow-sm text-center w-3/4">
+            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-3/4">
               <h3 className="text-lg font-semibold mb-4">
-                Bridge & Stake USDT on AAVE
+                Bridge & Supply USDT on AAVE
               </h3>
               <BridgeAndExecuteButton
                 contractAddress={'0x794a61358D6845594F94dc1DB02A252b5b4814aD'}
@@ -89,16 +89,16 @@ const Nexus = () => {
                   <Button
                     onClick={onClick}
                     disabled={isLoading}
-                    className="w-full"
+                    className="w-full font-bold rounded-lg"
                   >
                     {isLoading ? 'Processing…' : 'Bridge & Stake'}
                   </Button>
                 )}
               </BridgeAndExecuteButton>
             </div>
-            <div className="bg-white rounded-lg border p-6 shadow-sm text-center w-3/4">
+            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-3/4">
               <h3 className="text-lg font-semibold mb-4">
-                Bridge & Stake USDC on AAVE
+                Bridge & Supply USDC on AAVE
               </h3>
               <BridgeAndExecuteButton
                 contractAddress={'0xA238Dd80C259a72e81d7e4664a9801593F98d1c5'}
@@ -150,7 +150,7 @@ const Nexus = () => {
                   <Button
                     onClick={onClick}
                     disabled={isLoading}
-                    className="w-full"
+                    className="w-full font-bold rounded-lg"
                   >
                     {isLoading ? 'Processing…' : 'Bridge & Stake'}
                   </Button>

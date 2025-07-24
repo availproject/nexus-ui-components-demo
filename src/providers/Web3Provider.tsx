@@ -24,7 +24,7 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
       config={{
         appearance: {
           theme: 'light',
-          accentColor: '#676FFF',
+          accentColor: '#3CA3FC',
         },
         embeddedWallets: {
           createOnLogin: 'users-without-wallets',
@@ -53,7 +53,7 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
           optimismSepolia,
           polygonAmoy,
         ],
-        defaultChain: optimism,
+        defaultChain: mainnet,
       }}
     >
       <NexusProvider>{children}</NexusProvider>
