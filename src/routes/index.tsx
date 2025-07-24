@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Activity } from 'lucide-react'
 import Nexus from '@/components/nexus'
 import WalletConnection from '@/components/connect-wallet'
+import ViewUnifiedBalance from '@/components/view-balance'
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -23,8 +24,13 @@ function App() {
             Effect.
           </p>
         </div>
+        {authenticated && wallets.length > 0 && (
+          <div className="flex items-center flex-col gap-y-2">
+            <ViewUnifiedBalance />
+            <Nexus />
+          </div>
+        )}
 
-        {authenticated && wallets.length > 0 && <Nexus />}
         <div className="text-center">
           {!ready ? (
             <Activity className="animate-pulse mx-auto" />

@@ -16,6 +16,7 @@ export default function WalletConnection() {
   const setupProvider = async (wallet: ConnectedWallet) => {
     try {
       const ethProvider = await wallet.getEthereumProvider()
+      console.log('get provider', ethProvider)
       setProvider(ethProvider)
     } catch (error) {
       console.error('Failed to setup provider:', error)
