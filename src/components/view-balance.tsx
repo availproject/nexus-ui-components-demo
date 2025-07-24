@@ -37,7 +37,11 @@ const ViewUnifiedBalance = () => {
   const handleInit = async () => {
     if (isSdkInitialized) return
     setLoading(true)
-    const connectedWallet = wallets[0]
+    const connectedWallet = wallets?.find(
+      (wallet) => wallet?.connectorType === 'injected',
+    )
+    if (!connectedWallet) return
+    console.log('wallets', wallets)
     const provider = await connectedWallet.getEthereumProvider()
     await initializeSdk(provider)
     setLoading(false)
