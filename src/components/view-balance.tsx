@@ -50,6 +50,8 @@ const ViewUnifiedBalance = () => {
     setLoading(true)
     try {
       const balance = await sdk?.getUnifiedBalances()
+      const supportedChains = sdk?.utils?.getSupportedChains()
+      console.log('supportedChains', supportedChains)
       setUnifiedBalance(balance)
     } catch (e) {
       console.error('Error fetching balance', e)
