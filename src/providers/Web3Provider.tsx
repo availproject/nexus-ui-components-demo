@@ -56,7 +56,9 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
         defaultChain: mainnet,
       }}
     >
-      <NexusProvider>{children}</NexusProvider>
+      <NexusProvider config={{
+        debug: true
+      }}>{children}</NexusProvider>
     </PrivyProvider>
   )
 }
