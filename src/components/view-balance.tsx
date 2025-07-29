@@ -1,4 +1,8 @@
-import { CHAIN_METADATA, useNexus } from '@avail-project/nexus/ui'
+import {
+  CHAIN_METADATA,
+  SUPPORTED_CHAINS,
+  useNexus,
+} from '@avail-project/nexus/ui'
 import { useWallets } from '@privy-io/react-auth'
 import { Button } from './ui/button'
 import React, { useMemo, useState } from 'react'
@@ -20,6 +24,7 @@ import {
 import { ScrollArea } from './ui/scroll-area'
 import { Separator } from './ui/separator'
 import { Circle } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const ViewUnifiedBalance = () => {
   const { wallets } = useWallets()
@@ -150,7 +155,14 @@ const ViewUnifiedBalance = () => {
                                       }
                                       alt={chain.chain.name}
                                       sizes="100%"
-                                      className="rounded-full"
+                                      className={cn(
+                                        chain?.chain?.id !==
+                                          SUPPORTED_CHAINS.BASE &&
+                                          chain?.chain?.id !==
+                                            SUPPORTED_CHAINS.BASE_SEPOLIA
+                                          ? 'rounded-full'
+                                          : '',
+                                      )}
                                     />
                                   </div>
                                   <span className="text-sm font-medium">
