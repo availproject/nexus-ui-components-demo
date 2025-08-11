@@ -81,7 +81,7 @@ const Nexus = () => {
                   return { functionParams: [tokenAddr, amountWei, user, 0] }
                 }}
                 prefill={{
-                  toChainId: 42161,
+                  toChainId: SUPPORTED_CHAINS.ARBITRUM,
                   token: 'USDT',
                 }}
               >
