@@ -6,6 +6,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { useNexus } from '@avail-project/nexus/ui'
 import { useEffect, useState } from 'react'
+import { cn } from '@/lib/utils'
 
 export default function WalletConnection() {
   const { connectWallet, login, authenticated } = usePrivy()
@@ -47,7 +48,12 @@ export default function WalletConnection() {
   }, [connectedWallet, provider])
 
   return (
-    <div className="max-w-md mx-auto p-4">
+    <div
+      className={cn(
+        'max-w-md mx-auto p-4',
+        authenticated && wallets?.length > 0 && 'invisible',
+      )}
+    >
       <div className="text-center">
         <Button
           onClick={connectExternalWallet}

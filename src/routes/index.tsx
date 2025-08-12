@@ -32,11 +32,8 @@ function App() {
         )}
 
         <div className="text-center">
-          {!ready ? (
-            <Activity className="animate-pulse mx-auto" />
-          ) : (
-            <WalletConnection />
-          )}
+          {!ready && <Activity className="animate-pulse mx-auto" />}
+          {ready && <WalletConnection />}
         </div>
       </div>
     </div>

@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@avail-project/nexus':
-        specifier: 0.1.3-dev.2
-        version: 0.1.3-dev.2(@emotion/is-prop-valid@1.2.2)(bufferutil@4.0.9)(encoding@0.1.13)(google-protobuf@3.21.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(utf-8-validate@5.0.10)(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.2.1)(jiti@2.5.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.3))(zod@3.25.76)
+        specifier: 0.1.3-dev.3
+        version: 0.1.3-dev.3(@emotion/is-prop-valid@1.2.2)(bufferutil@4.0.9)(encoding@0.1.13)(google-protobuf@3.21.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(utf-8-validate@5.0.10)(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.2.1)(jiti@2.5.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.3))(zod@3.25.76)
       '@privy-io/react-auth':
         specifier: ^2.17.0
         version: 2.21.2(@solana/web3.js@1.98.4(bufferutil@4.0.9)(encoding@0.1.13)(typescript@5.9.2)(utf-8-validate@5.0.10))(@types/react@19.1.9)(bs58@6.0.0)(bufferutil@4.0.9)(lit@3.3.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@3.25.76)
@@ -148,8 +148,8 @@ packages:
   '@asamuzakjp/css-color@3.2.0':
     resolution: {integrity: sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw==}
 
-  '@avail-project/nexus@0.1.3-dev.2':
-    resolution: {integrity: sha512-ATahUz8zOzoHUsPv/C0pQAExvuU7uY3VmD5eRsovGmJRvUWNiCvgUfXiBPQw4yY5vlCtci8eDpYKX9lalOgjFw==}
+  '@avail-project/nexus@0.1.3-dev.3':
+    resolution: {integrity: sha512-f4RLW/+X4P89Ntvze+nJup35msALR+d+mK8MOP9iDCqMXeFnwT2e8zXvCJRiak5RI+gqQUaMW9KMpRRUNH97+g==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -5409,7 +5409,7 @@ snapshots:
       '@csstools/css-tokenizer': 3.0.4
       lru-cache: 10.4.3
 
-  '@avail-project/nexus@0.1.3-dev.2(@emotion/is-prop-valid@1.2.2)(bufferutil@4.0.9)(encoding@0.1.13)(google-protobuf@3.21.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(utf-8-validate@5.0.10)(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.2.1)(jiti@2.5.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.3))(zod@3.25.76)':
+  '@avail-project/nexus@0.1.3-dev.3(@emotion/is-prop-valid@1.2.2)(bufferutil@4.0.9)(encoding@0.1.13)(google-protobuf@3.21.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(utf-8-validate@5.0.10)(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.2.1)(jiti@2.5.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.3))(zod@3.25.76)':
     dependencies:
       '@arcana/ca-sdk': 1.1.1(bufferutil@4.0.9)(encoding@0.1.13)(google-protobuf@3.21.4)(typescript@5.9.2)(utf-8-validate@5.0.10)(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.2.1)(jiti@2.5.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.3))(zod@3.25.76)
       '@lottiefiles/dotlottie-react': 0.14.2(react@19.1.1)

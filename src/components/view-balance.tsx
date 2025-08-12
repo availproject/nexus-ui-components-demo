@@ -46,7 +46,6 @@ const ViewUnifiedBalance = () => {
       (wallet) => wallet?.connectorType === 'injected',
     )
     if (!connectedWallet) return
-    console.log('wallets', wallets)
     const provider = await connectedWallet.getEthereumProvider()
     await initializeSdk(provider)
     setLoading(false)
@@ -56,6 +55,7 @@ const ViewUnifiedBalance = () => {
     try {
       const balance = await sdk?.getUnifiedBalances()
       const supportedChains = sdk?.utils?.getSupportedChains()
+      console.log('balance', balance)
       console.log('supportedChains', supportedChains)
       setUnifiedBalance(balance)
     } catch (e) {
