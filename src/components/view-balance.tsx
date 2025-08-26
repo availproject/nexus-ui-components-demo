@@ -2,11 +2,11 @@ import {
   CHAIN_METADATA,
   SUPPORTED_CHAINS,
   useNexus,
-} from '@avail-project/nexus/ui'
+} from '@avail-project/nexus-widgets'
 import { useWallets } from '@privy-io/react-auth'
 import { Button } from './ui/button'
 import React, { useMemo, useState } from 'react'
-import type { UserAsset } from '@avail-project/nexus/core'
+import type { UserAsset } from '@avail-project/nexus-widgets'
 import {
   Dialog,
   DialogContent,

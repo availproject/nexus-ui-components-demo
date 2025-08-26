@@ -3,12 +3,12 @@ import {
   BridgeAndExecuteButton,
   BridgeButton,
   TransferButton,
-} from '@avail-project/nexus/ui'
+} from '@avail-project/nexus-widgets'
 import {
   SUPPORTED_CHAINS,
   TOKEN_CONTRACT_ADDRESSES,
   TOKEN_METADATA,
-} from '@avail-project/nexus/core'
+} from '@avail-project/nexus-widgets'
 import { Button } from './ui/button'
 import { parseUnits } from 'viem'
 

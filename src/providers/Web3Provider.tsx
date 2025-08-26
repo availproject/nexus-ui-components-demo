@@ -1,5 +1,5 @@
 import { PrivyProvider } from '@privy-io/react-auth'
-import { NexusProvider } from '@avail-project/nexus/ui'
+import { NexusProvider } from '@avail-project/nexus-widgets'
 import {
   base,
   polygon,
@@ -16,7 +16,7 @@ import {
   kaia,
 } from 'viem/chains'
 import { createContext, useContext, useMemo, useState } from 'react'
-import type { NexusNetwork } from '@avail-project/nexus/core'
+import type { NexusNetwork } from '@avail-project/nexus-widgets'
 
 interface Web3ContextValue {
   network: NexusNetwork
