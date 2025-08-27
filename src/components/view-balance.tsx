@@ -3,7 +3,6 @@ import {
   SUPPORTED_CHAINS,
   useNexus,
 } from '@avail-project/nexus-widgets'
-import { useWallets } from '@privy-io/react-auth'
 import { Button } from './ui/button'
 import React, { useMemo, useState } from 'react'
 import type { UserAsset } from '@avail-project/nexus-widgets'
@@ -23,12 +22,10 @@ import {
 } from './ui/accordion'
 import { ScrollArea } from './ui/scroll-area'
 import { Separator } from './ui/separator'
-import { Circle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const ViewUnifiedBalance = () => {
-  const { wallets } = useWallets()
-  const { initializeSdk, isSdkInitialized, sdk } = useNexus()
+  const { isSdkInitialized, sdk } = useNexus()
   const [loading, setLoading] = useState(false)
   const [unifiedBalance, setUnifiedBalance] = useState<UserAsset[] | undefined>(
     undefined,
@@ -39,17 +36,17 @@ const ViewUnifiedBalance = () => {
     return num.toFixed(Math.min(6, decimals))
   }
 
-  const handleInit = async () => {
-    if (isSdkInitialized) return
-    setLoading(true)
-    const connectedWallet = wallets?.find(
-      (wallet) => wallet?.connectorType === 'injected',
-    )
-    if (!connectedWallet) return
-    const provider = await connectedWallet.getEthereumProvider()
-    await initializeSdk(provider)
-    setLoading(false)
-  }
+  // const handleInit = async () => {
+  //   if (isSdkInitialized) return
+  //   setLoading(true)
+  //   const connectedWallet = wallets?.find(
+  //     (wallet) => wallet?.connectorType === 'injected',
+  //   )
+  //   if (!connectedWallet) return
+  //   const provider = await connectedWallet.getEthereumProvider()
+  //   await initializeSdk(provider)
+  //   setLoading(false)
+  // }
   const fetchBalance = async () => {
     setLoading(true)
     try {
@@ -66,16 +63,7 @@ const ViewUnifiedBalance = () => {
   }
 
   const TriggerButton = () => {
-    if (!isSdkInitialized)
-      return (
-        <Button className="font-bold" variant={'outline'} onClick={handleInit}>
-          {loading ? (
-            <Circle className="animate-spin w-4 h-4 text-foreground" />
-          ) : (
-            'Sign in to view unified balance'
-          )}
-        </Button>
-      )
+    if (!isSdkInitialized) return <></>
     else
       return (
         <DialogTrigger asChild>
