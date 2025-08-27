@@ -72,7 +72,7 @@ const ViewUnifiedBalance = () => {
           {loading ? (
             <Circle className="animate-spin w-4 h-4 text-foreground" />
           ) : (
-            'Initialize SDK'
+            'Sign in to view unified balance'
           )}
         </Button>
       )
