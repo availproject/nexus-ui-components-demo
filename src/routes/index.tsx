@@ -4,6 +4,7 @@ import { Activity } from 'lucide-react'
 import Nexus from '@/components/nexus'
 import WalletConnection from '@/components/connect-wallet'
 import ViewUnifiedBalance from '@/components/view-balance'
+import Links from '@/components/links'
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -35,6 +36,10 @@ function App() {
           {!ready && <Activity className="animate-pulse mx-auto" />}
           {ready && <WalletConnection />}
         </div>
+      </div>
+
+      <div className="mx-auto px-4 py-8 w-fit -translate-y-12">
+        <Links />
       </div>
     </div>
   )

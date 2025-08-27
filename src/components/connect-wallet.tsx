@@ -4,7 +4,7 @@ import {
   type ConnectedWallet,
 } from '@privy-io/react-auth'
 import { Button } from '@/components/ui/button'
-import { useNexus } from '@avail-project/nexus/ui'
+import { useNexus } from '@avail-project/nexus-widgets'
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
