@@ -3,6 +3,7 @@ import {
   BridgeAndExecuteButton,
   BridgeButton,
   TransferButton,
+  SwapButton,
 } from '@avail-project/nexus-widgets'
 import {
   SUPPORTED_CHAINS,
@@ -48,6 +49,20 @@ const Nexus = () => {
                   </Button>
                 )}
               </TransferButton>
+            </div>
+            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/2">
+              <h3 className="text-lg font-semibold mb-4">Swap Tokens</h3>
+              <SwapButton>
+                {({ onClick, isLoading }) => (
+                  <Button
+                    onClick={onClick}
+                    disabled={isLoading}
+                    className="w-full font-bold rounded-lg"
+                  >
+                    {isLoading ? 'Loading...' : 'Swap'}
+                  </Button>
+                )}
+              </SwapButton>
             </div>
           </div>
           <div className="w-full flex items-center gap-x-4">
