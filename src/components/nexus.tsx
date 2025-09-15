@@ -66,7 +66,10 @@ const Nexus = () => {
             </div>
           </div>
           <div className="w-full flex items-center gap-x-4">
-            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-3/4">
+            <div
+              className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-3/4"
+              key={'usdt-aave'}
+            >
               <h3 className="text-lg font-semibold mb-4">
                 Bridge & Supply USDT on AAVE
               </h3>
@@ -111,7 +114,10 @@ const Nexus = () => {
                 )}
               </BridgeAndExecuteButton>
             </div>
-            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-3/4">
+            <div
+              className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-3/4"
+              key={'usdc-aave'}
+            >
               <h3 className="text-lg font-semibold mb-4">
                 Bridge & Supply USDC on AAVE
               </h3>
