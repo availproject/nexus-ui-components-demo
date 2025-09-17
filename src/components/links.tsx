@@ -6,7 +6,7 @@ const SDK_LINKS = [
   {
     id: 'download',
     label: 'Download SDK',
-    href: 'https://www.npmjs.com/package/@avail-project/nexus-widgets/v/0.0.2',
+    href: 'https://www.npmjs.com/package/@avail-project/nexus-widgets',
   },
   {
     id: 'docs',
