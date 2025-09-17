@@ -47,13 +47,29 @@ const ViewUnifiedBalance = () => {
   //   await initializeSdk(provider)
   //   setLoading(false)
   // }
+
   const fetchBalance = async () => {
     setLoading(true)
     try {
       const balance = await sdk?.getUnifiedBalances()
+      const swapBalance = await sdk?.getSwapBalances()
+      console.log(
+        'Swap supported chains and tokens',
+        sdk?.utils?.getSwapSupportedChainsAndTokens(),
+      )
+      const unifiedTokenSymbols = balance.map((bal) => bal.symbol)
+      swapBalance.assets.forEach((asset) => {
+        const assetSymbol = asset?.symbol
+        if (!unifiedTokenSymbols.includes(assetSymbol)) {
+          balance.push(asset)
+        }
+      })
       const supportedChains = sdk?.utils?.getSupportedChains()
+      const swapSupportedChainsAndTokens =
+        sdk?.utils?.getSwapSupportedChainsAndTokens()
       console.log('balance', balance)
       console.log('supportedChains', supportedChains)
+      console.log('swapSupportedChainsAndTokens', swapSupportedChainsAndTokens)
       setUnifiedBalance(balance)
     } catch (e) {
       console.error('Error fetching balance', e)
