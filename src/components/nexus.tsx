@@ -19,7 +19,7 @@ const Nexus = () => {
       <CardContent>
         <div className="flex flex-col justify-center items-center gap-y-4">
           <div className="w-full flex items-center gap-x-4">
-            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/2">
+            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/3">
               <h3 className="text-lg font-semibold mb-4">Bridge Tokens</h3>
               <BridgeButton>
                 {({ onClick, isLoading }) => (
@@ -36,7 +36,7 @@ const Nexus = () => {
                 )}
               </BridgeButton>
             </div>
-            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/2">
+            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/3">
               <h3 className="text-lg font-semibold mb-4">Transfer Tokens</h3>
               <TransferButton>
                 {({ onClick, isLoading }) => (
@@ -50,7 +50,7 @@ const Nexus = () => {
                 )}
               </TransferButton>
             </div>
-            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/2">
+            <div className="bg-card rounded-lg border border-gray-400 p-6 shadow-sm text-center w-1/3">
               <h3 className="text-lg font-semibold mb-4">Swap Tokens</h3>
               <SwapButton>
                 {({ onClick, isLoading }) => (
@@ -59,7 +59,7 @@ const Nexus = () => {
                     disabled={isLoading}
                     className="w-full font-bold rounded-lg"
                   >
-                    {isLoading ? 'Loading...' : 'Swap'}
+                    {isLoading ? 'Loading...' : 'Open Swaps (beta)'}
                   </Button>
                 )}
               </SwapButton>
