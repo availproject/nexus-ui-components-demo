@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@avail-project/nexus-widgets": "0.1.8-beta.0",
-    "@privy-io/react-auth": "^2.17.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-label": "^2.1.7",
@@ -26,6 +25,7 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-switch": "^1.2.5",
     "@tailwindcss/vite": "^4.0.6",
+    "@tanstack/react-query": "^5.90.1",
     "@tanstack/react-router": "^1.121.2",
     "@tanstack/react-router-devtools": "^1.121.2",
     "@tanstack/router-plugin": "^1.121.2",
@@ -33,12 +33,14 @@
     "@wagmi/core": "^2.18.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "connectkit": "^1.9.1",
     "lucide-react": "^0.523.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.0.6",
-    "viem": "^2.31.4"
+    "viem": "^2.37.7",
+    "wagmi": "^2.17.2"
   },
   "devDependencies": {
     "@tanstack/eslint-config": "^0.1.0",

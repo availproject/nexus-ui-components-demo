@@ -1,18 +1,17 @@
-import { usePrivy, useWallets } from '@privy-io/react-auth'
 import { createFileRoute } from '@tanstack/react-router'
 import { Activity } from 'lucide-react'
 import Nexus from '@/components/nexus'
 import WalletConnection from '@/components/connect-wallet'
 import ViewUnifiedBalance from '@/components/view-balance'
 import Links from '@/components/links'
+import { useAccount } from 'wagmi'
 
 export const Route = createFileRoute('/')({
   component: App,
 })
 
 function App() {
-  const { ready, authenticated } = usePrivy()
-  const { wallets } = useWallets()
+  const { status } = useAccount()
 
   return (
     <div className="min-h-screen">
@@ -25,7 +24,7 @@ function App() {
             Effect.
           </p>
         </div>
-        {authenticated && wallets.length > 0 && (
+        {status === 'connected' && (
           <div className="flex items-center flex-col gap-y-2">
             <ViewUnifiedBalance />
             <Nexus />
@@ -33,8 +32,10 @@ function App() {
         )}
 
         <div className="text-center">
-          {!ready && <Activity className="animate-pulse mx-auto" />}
-          {ready && <WalletConnection />}
+          {status === 'disconnected' && (
+            <Activity className="animate-pulse mx-auto" />
+          )}
+          <WalletConnection />
         </div>
       </div>
 

@@ -1,73 +1,42 @@
-import {
-  usePrivy,
-  useWallets,
-  type ConnectedWallet,
-} from '@privy-io/react-auth'
-import { Button } from '@/components/ui/button'
-import { useNexus } from '@avail-project/nexus-widgets'
-import { useEffect, useState } from 'react'
+import { useNexus, type EthereumProvider } from '@avail-project/nexus-widgets'
+import { useEffect } from 'react'
 import { cn } from '@/lib/utils'
+import { ConnectKitButton } from 'connectkit'
+import { useAccount } from 'wagmi'
 
 export default function WalletConnection() {
-  const { connectWallet, login, authenticated } = usePrivy()
-  const { wallets } = useWallets()
-  const { setProvider, provider } = useNexus()
-  const [isConnecting, setIsConnecting] = useState(false)
+  const { setProvider, provider, isSdkInitialized, deinitializeSdk } =
+    useNexus()
+  const { status, connector } = useAccount()
 
-  const setupProvider = async (wallet: ConnectedWallet) => {
+  const setupProvider = async () => {
     try {
-      const ethProvider = await wallet.getEthereumProvider()
-      console.log('get provider', ethProvider)
-      setProvider(ethProvider)
+      const ethProvider = await connector?.getProvider()
+      if (!ethProvider) return
+      setProvider(ethProvider as EthereumProvider)
     } catch (error) {
       console.error('Failed to setup provider:', error)
     }
   }
 
-  const connectExternalWallet = async () => {
-    try {
-      setIsConnecting(true)
-      if (!authenticated) {
-        login()
-      } else {
-        connectWallet()
-      }
-    } catch (error) {
-      console.error('Failed to connect wallet:', error)
-    } finally {
-      setIsConnecting(false)
-    }
-  }
-
-  const connectedWallet = wallets[0]
-
   useEffect(() => {
-    if (connectedWallet && !provider) {
-      setupProvider(connectedWallet)
+    if (!provider && status === 'connected') {
+      setupProvider()
     }
-  }, [connectedWallet, provider])
+    if (isSdkInitialized && provider && status === 'disconnected') {
+      console.log('deinit')
+      deinitializeSdk()
+    }
+  }, [status, provider, isSdkInitialized])
 
   return (
     <div
       className={cn(
-        'max-w-md mx-auto p-4',
-        authenticated && wallets?.length > 0 && 'invisible',
+        'max-w-md mx-auto p-4 flex items-center justify-center',
+        status === 'connected' && 'hidden',
       )}
     >
-      <div className="text-center">
-        <Button
-          onClick={connectExternalWallet}
-          disabled={isConnecting || (authenticated && wallets?.length > 0)}
-          size="lg"
-          className="min-w-[200px]"
-        >
-          {isConnecting
-            ? 'Connecting...'
-            : authenticated && wallets?.length > 0
-              ? 'Connected'
-              : 'Connect Wallet & Login'}
-        </Button>
-      </div>
+      <ConnectKitButton />
     </div>
   )
 }
