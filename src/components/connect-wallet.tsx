@@ -1,7 +1,7 @@
 import { useNexus, type EthereumProvider } from '@avail-project/nexus-widgets'
 import { useEffect } from 'react'
 import { cn } from '@/lib/utils'
-import { ConnectKitButton } from 'connectkit'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount } from 'wagmi'
 
 export default function WalletConnection() {
@@ -36,7 +36,7 @@ export default function WalletConnection() {
         status === 'connected' && 'hidden',
       )}
     >
-      <ConnectKitButton />
+      <ConnectButton />
     </div>
   )
 }

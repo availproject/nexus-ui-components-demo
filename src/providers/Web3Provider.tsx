@@ -1,5 +1,5 @@
 import { NexusProvider } from '@avail-project/nexus-widgets'
-import { WagmiProvider, createConfig, http } from 'wagmi'
+import { WagmiProvider } from 'wagmi'
 import {
   base,
   polygon,
@@ -16,59 +16,39 @@ import {
   kaia,
   sepolia,
 } from 'wagmi/chains'
+
 import { createContext, useContext, useMemo, useState } from 'react'
-import { ConnectKitProvider, getDefaultConfig } from 'connectkit'
 import type { NexusNetwork } from '@avail-project/nexus-widgets'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import '@rainbow-me/rainbowkit/styles.css'
+import {
+  getDefaultConfig,
+  lightTheme,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit'
 
 const walletConnectProjectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
-const config = createConfig(
-  getDefaultConfig({
-    chains: [
-      mainnet,
-      base,
-      polygon,
-      arbitrum,
-      optimism,
-      scroll,
-      avalanche,
-      sophon,
-      kaia,
-      sepolia,
-      baseSepolia,
-      arbitrumSepolia,
-      optimismSepolia,
-      polygonAmoy,
-    ],
-    transports: {
-      [mainnet.id]: http(mainnet.rpcUrls.default.http[0]),
-      [arbitrum.id]: http(arbitrum.rpcUrls.default.http[0]),
-      [base.id]: http(base.rpcUrls.default.http[0]),
-      [optimism.id]: http(optimism.rpcUrls.default.http[0]),
-      [polygon.id]: http(polygon.rpcUrls.default.http[0]),
-      [avalanche.id]: http(avalanche.rpcUrls.default.http[0]),
-      [scroll.id]: http(scroll.rpcUrls.default.http[0]),
-      [sophon.id]: http(sophon.rpcUrls.default.http[0]),
-      [kaia.id]: http(kaia.rpcUrls.default.http[0]),
-      [sepolia.id]: http(sepolia.rpcUrls.default.http[0]),
-      [baseSepolia.id]: http(baseSepolia.rpcUrls.default.http[0]),
-      [arbitrumSepolia.id]: http(arbitrumSepolia.rpcUrls.default.http[0]),
-      [optimismSepolia.id]: http(optimismSepolia.rpcUrls.default.http[0]),
-      [polygonAmoy.id]: http(polygonAmoy.rpcUrls.default.http[0]),
-    },
 
-    walletConnectProjectId: walletConnectProjectId!,
-
-    // Required App Info
-    appName: 'Avail Nexus',
-
-    // Optional App Info
-    appDescription: 'Avail Nexus',
-    appUrl: 'https://www.availproject.org/',
-    appIcon:
-      'https://www.availproject.org/_next/static/media/avail_logo.9c818c5a.png',
-  }),
-)
+const config = getDefaultConfig({
+  appName: 'Avail Nexuss',
+  projectId: walletConnectProjectId!,
+  chains: [
+    mainnet,
+    base,
+    polygon,
+    arbitrum,
+    optimism,
+    scroll,
+    avalanche,
+    sophon,
+    kaia,
+    sepolia,
+    baseSepolia,
+    arbitrumSepolia,
+    optimismSepolia,
+    polygonAmoy,
+  ],
+})
 const queryClient = new QueryClient()
 
 interface Web3ContextValue {
@@ -86,7 +66,13 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
     <Web3Context.Provider value={value}>
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
-          <ConnectKitProvider theme="soft" mode="light">
+          <RainbowKitProvider
+            modalSize="compact"
+            theme={lightTheme({
+              accentColor: '#fe8b6c',
+              accentColorForeground: 'white',
+            })}
+          >
             <NexusProvider
               config={{
                 debug: true,
@@ -95,7 +81,7 @@ const Web3Provider = ({ children }: { children: React.ReactNode }) => {
             >
               {children}
             </NexusProvider>
-          </ConnectKitProvider>
+          </RainbowKitProvider>
         </QueryClientProvider>
       </WagmiProvider>
     </Web3Context.Provider>

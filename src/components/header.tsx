@@ -1,4 +1,4 @@
-import { ConnectKitButton } from 'connectkit'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 export default function Header() {
   return (
@@ -8,7 +8,7 @@ export default function Header() {
       </nav>
 
       <div className="flex items-center gap-x-4">
-        <ConnectKitButton />
+        <ConnectButton />
       </div>
     </header>
   )

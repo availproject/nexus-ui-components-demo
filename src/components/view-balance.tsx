@@ -52,18 +52,10 @@ const ViewUnifiedBalance = () => {
     setLoading(true)
     try {
       const balance = await sdk?.getUnifiedBalances()
-      const swapBalance = await sdk?.getSwapBalances()
       console.log(
         'Swap supported chains and tokens',
         sdk?.utils?.getSwapSupportedChainsAndTokens(),
       )
-      const unifiedTokenSymbols = balance.map((bal: UserAsset) => bal.symbol)
-      swapBalance.assets.forEach((asset: any) => {
-        const assetSymbol = asset?.symbol
-        if (!unifiedTokenSymbols.includes(assetSymbol)) {
-          balance.push(asset)
-        }
-      })
       const supportedChains = sdk?.utils?.getSupportedChains()
       const swapSupportedChainsAndTokens =
         sdk?.utils?.getSwapSupportedChainsAndTokens()
