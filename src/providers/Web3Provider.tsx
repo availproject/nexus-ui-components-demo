@@ -30,7 +30,7 @@ import {
 const walletConnectProjectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
 
 const config = getDefaultConfig({
-  appName: 'Avail Nexuss',
+  appName: 'Avail Nexus',
   projectId: walletConnectProjectId!,
   chains: [
     mainnet,
