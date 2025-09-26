@@ -4,6 +4,7 @@ import {
   BridgeButton,
   TransferButton,
   SwapButton,
+  useNexus,
 } from '@avail-project/nexus-widgets'
 import {
   SUPPORTED_CHAINS,
@@ -12,8 +13,31 @@ import {
 } from '@avail-project/nexus-widgets'
 import { Button } from './ui/button'
 import { parseUnits } from 'viem'
+import { useState } from 'react'
 
 const Nexus = () => {
+  const { initializeSdk, isSdkInitialized } = useNexus()
+  const [loading, setLoading] = useState(false)
+
+  const handleInitializeSDK = async () => {
+    if (isSdkInitialized) return
+    setLoading(true)
+    try {
+      await initializeSdk()
+    } catch (error) {
+      console.error('Unable to initialize SDK:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const widgetButtonClick = async (onClick: () => void) => {
+    if (!isSdkInitialized) {
+      await handleInitializeSDK()
+    }
+    onClick()
+  }
+
   return (
     <Card className="border-none shadow-none">
       <CardContent>
@@ -24,14 +48,15 @@ const Nexus = () => {
               <BridgeButton>
                 {({ onClick, isLoading }) => (
                   <Button
-                    onClick={() => {
-                      console.log('clicked')
-                      onClick()
-                    }}
-                    disabled={isLoading}
+                    onClick={() => widgetButtonClick(onClick)}
+                    disabled={isLoading || loading}
                     className="w-full font-bold rounded-lg"
                   >
-                    {isLoading ? 'Loading...' : 'Open Bridge'}
+                    {loading
+                      ? 'Initializing...'
+                      : isLoading
+                        ? 'Loading...'
+                        : 'Open Bridge'}
                   </Button>
                 )}
               </BridgeButton>
@@ -41,11 +66,15 @@ const Nexus = () => {
               <TransferButton>
                 {({ onClick, isLoading }) => (
                   <Button
-                    onClick={onClick}
-                    disabled={isLoading}
+                    onClick={() => widgetButtonClick(onClick)}
+                    disabled={isLoading || loading}
                     className="w-full font-bold rounded-lg"
                   >
-                    {isLoading ? 'Loading...' : 'Open Transfer'}
+                    {loading
+                      ? 'Initializing...'
+                      : isLoading
+                        ? 'Loading...'
+                        : 'Open Transfer'}
                   </Button>
                 )}
               </TransferButton>
@@ -55,11 +84,15 @@ const Nexus = () => {
               <SwapButton>
                 {({ onClick, isLoading }) => (
                   <Button
-                    onClick={onClick}
-                    disabled={isLoading}
+                    onClick={() => widgetButtonClick(onClick)}
+                    disabled={isLoading || loading}
                     className="w-full font-bold rounded-lg"
                   >
-                    {isLoading ? 'Loading...' : 'Open Swaps (beta)'}
+                    {loading
+                      ? 'Initializing...'
+                      : isLoading
+                        ? 'Loading...'
+                        : 'Open Swaps (beta)'}
                   </Button>
                 )}
               </SwapButton>
@@ -105,11 +138,15 @@ const Nexus = () => {
               >
                 {({ onClick, isLoading }) => (
                   <Button
-                    onClick={onClick}
-                    disabled={isLoading}
+                    onClick={() => widgetButtonClick(onClick)}
+                    disabled={isLoading || loading}
                     className="w-full font-bold rounded-lg"
                   >
-                    {isLoading ? 'Processing…' : 'Bridge & Stake'}
+                    {loading
+                      ? 'Initializing...'
+                      : isLoading
+                        ? 'Processing…'
+                        : 'Bridge & Stake'}
                   </Button>
                 )}
               </BridgeAndExecuteButton>
@@ -169,11 +206,15 @@ const Nexus = () => {
               >
                 {({ onClick, isLoading }) => (
                   <Button
-                    onClick={onClick}
-                    disabled={isLoading}
+                    onClick={() => widgetButtonClick(onClick)}
+                    disabled={isLoading || loading}
                     className="w-full font-bold rounded-lg"
                   >
-                    {isLoading ? 'Processing…' : 'Bridge & Stake'}
+                    {loading
+                      ? 'Initializing...'
+                      : isLoading
+                        ? 'Processing…'
+                        : 'Bridge & Stake'}
                   </Button>
                 )}
               </BridgeAndExecuteButton>

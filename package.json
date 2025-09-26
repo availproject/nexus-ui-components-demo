@@ -16,7 +16,7 @@
     "check": "prettier --write . && eslint --fix"
   },
   "dependencies": {
-    "@avail-project/nexus-widgets": "0.1.10-beta.0",
+    "@avail-project/nexus-widgets": "0.1.11-beta.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-label": "^2.1.7",

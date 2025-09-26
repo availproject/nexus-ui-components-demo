@@ -25,8 +25,9 @@ import { Separator } from './ui/separator'
 import { cn } from '@/lib/utils'
 
 const ViewUnifiedBalance = () => {
-  const { isSdkInitialized, sdk } = useNexus()
+  const { isSdkInitialized, sdk, initializeSdk } = useNexus()
   const [loading, setLoading] = useState(false)
+  const [initLoading, setInitLoading] = useState(false)
   const [unifiedBalance, setUnifiedBalance] = useState<UserAsset[] | undefined>(
     undefined,
   )
@@ -36,21 +37,22 @@ const ViewUnifiedBalance = () => {
     return num.toFixed(Math.min(6, decimals))
   }
 
-  // const handleInit = async () => {
-  //   if (isSdkInitialized) return
-  //   setLoading(true)
-  //   const connectedWallet = wallets?.find(
-  //     (wallet) => wallet?.connectorType === 'injected',
-  //   )
-  //   if (!connectedWallet) return
-  //   const provider = await connectedWallet.getEthereumProvider()
-  //   await initializeSdk(provider)
-  //   setLoading(false)
-  // }
+  const handleInit = async () => {
+    if (isSdkInitialized) return
+    setInitLoading(true)
+    try {
+      await initializeSdk()
+    } catch (error) {
+      console.error('Error initializing SDK', error)
+    } finally {
+      setInitLoading(false)
+    }
+  }
 
   const fetchBalance = async () => {
     setLoading(true)
     try {
+      await handleInit()
       const balance = await sdk?.getUnifiedBalances()
       console.log(
         'Swap supported chains and tokens',
@@ -71,15 +73,13 @@ const ViewUnifiedBalance = () => {
   }
 
   const TriggerButton = () => {
-    if (!isSdkInitialized) return <></>
-    else
-      return (
-        <DialogTrigger asChild>
-          <Button className="font-bold" onClick={fetchBalance}>
-            View Unified Balance
-          </Button>
-        </DialogTrigger>
-      )
+    return (
+      <DialogTrigger asChild>
+        <Button className="font-bold" onClick={fetchBalance}>
+          View Unified Balance
+        </Button>
+      </DialogTrigger>
+    )
   }
 
   const totalBalance = useMemo(() => {
@@ -94,12 +94,19 @@ const ViewUnifiedBalance = () => {
       <TriggerButton />
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="font-bold">Unified Balance</DialogTitle>
-          <DialogDescription className="font-semibold">
-            {loading
-              ? 'Fetching balance'
-              : `Total Unified Balance: $${totalBalance}`}
-          </DialogDescription>
+          {initLoading ? (
+            <DialogTitle>Initializing...</DialogTitle>
+          ) : (
+            <>
+              {' '}
+              <DialogTitle className="font-bold">Unified Balance</DialogTitle>
+              <DialogDescription className="font-semibold">
+                {loading
+                  ? 'Fetching balance'
+                  : `Total Unified Balance: $${totalBalance}`}
+              </DialogDescription>
+            </>
+          )}
         </DialogHeader>
         {unifiedBalance && (
           <ScrollArea className="w-full max-h-[476px] no-scrollbar">
