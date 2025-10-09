@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@avail-project/nexus-widgets':
-        specifier: 0.1.11-beta.0
-        version: 0.1.11-beta.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(utf-8-validate@5.0.10)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))
+        specifier: 0.1.15-beta.0
+        version: 0.1.15-beta.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(utf-8-validate@5.0.10)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))
       '@radix-ui/react-accordion':
         specifier: ^1.2.11
         version: 1.2.12(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -150,13 +150,13 @@ packages:
   '@asamuzakjp/css-color@3.2.0':
     resolution: {integrity: sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw==}
 
-  '@avail-project/nexus-core@0.0.1-beta.0':
-    resolution: {integrity: sha512-aN97wZVNi2CxTj0EI4PeOMv7Kudjphcxer8TIC22CUFSmgtcUchc2oTV4WZ1JLHt/Q2JZtgCsqckmGlcOIpg0w==}
+  '@avail-project/nexus-core@0.0.7-beta.0':
+    resolution: {integrity: sha512-i5VDnlMatA6JH2iB62961oSTngUr4w/3/f44olpuEFOsw1rYO0uisTwQ1CRdLGbI/MhZXpcRmBt2oOgeYsLjHA==}
     peerDependencies:
       viem: ^2.0.0
 
-  '@avail-project/nexus-widgets@0.1.11-beta.0':
-    resolution: {integrity: sha512-Azctqqj74vXyMEk7DUbYh6mOXtvEBKZ/DOu7t7ARljZPGFX+QII/I747Ce4ZEjkmzvD+Cah1lHAlbD7zT4tOjQ==}
+  '@avail-project/nexus-widgets@0.1.15-beta.0':
+    resolution: {integrity: sha512-TH/Gsl7CybArysmZrl+ZLm7TPe/eNTVy2l/CS1vrqvBopXKb/1O+FDhFcod0f55VKebJSR1lqMHn7AmLkEOkgg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1847,8 +1847,8 @@ packages:
   '@types/react@19.1.13':
     resolution: {integrity: sha512-hHkbU/eoO3EG5/MZkuFSKmYqPbSVk5byPFa3e7y/8TybHiLMACgI8seVYlicwk7H5K/rI2px9xrQp/C+AUDTiQ==}
 
-  '@types/secp256k1@4.0.6':
-    resolution: {integrity: sha512-hHxJU6PAEUn0TP4S/ZOzuTUvJWuZ6eIKeNKb5RBpODvSl6hp1Wrw4s7ATY50rklRCScUDpHzVA/DQdSjJ3UoYQ==}
+  '@types/secp256k1@4.0.7':
+    resolution: {integrity: sha512-Rcvjl6vARGAKRO6jHeKMatGrvOMGrR/AR11N1x2LqintPCyDZ7NBhrh238Z2VZc7aM7KIwnFpFQ7fnfK4H/9Qw==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -2806,8 +2806,8 @@ packages:
   es-toolkit@1.33.0:
     resolution: {integrity: sha512-X13Q/ZSc+vsO1q600bvNK4bxgXMkHcf//RxCmYDaRY5DAcT+eoXjY5hoAPGMdRnWQjvyLEcyauG3b6hz76LNqg==}
 
-  es-toolkit@1.39.10:
-    resolution: {integrity: sha512-E0iGnTtbDhkeczB0T+mxmoVlT4YNweEKBLq7oaU4p11mecdsZpNWOglI4895Vh4usbQ+LsJiuLuI2L0Vdmfm2w==}
+  es-toolkit@1.40.0:
+    resolution: {integrity: sha512-8o6w0KFmU0CiIl0/Q/BCEOabF2IJaELM1T2PWj6e8KqzHv1gdx+7JtFnDwOx1kJH/isJ5NwlDG1nCr1HrRF94Q==}
 
   esbuild@0.25.1:
     resolution: {integrity: sha512-BGO5LtrGC7vxnqucAe/rmvKdJllfGaYWdyABvyMoXQlfYMb2bbRuReWR5tEGE//4LcNJj9XrkovTqNYRFZHAMQ==}
@@ -5126,7 +5126,7 @@ snapshots:
       axios: 1.12.2
       browser-headers: 0.4.1
       decimal.js: 10.6.0
-      es-toolkit: 1.39.10
+      es-toolkit: 1.40.0
       fuels: 0.101.1(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))
       long: 5.3.2
       msgpackr: 1.11.5
@@ -5143,7 +5143,7 @@ snapshots:
       '@csstools/css-tokenizer': 3.0.4
       lru-cache: 10.4.3
 
-  '@avail-project/nexus-core@0.0.1-beta.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(utf-8-validate@5.0.10)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))':
+  '@avail-project/nexus-core@0.0.7-beta.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(utf-8-validate@5.0.10)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))':
     dependencies:
       '@arcana/ca-common': 1.0.1-alpha.6(@cosmjs/proto-signing@0.34.0)(@cosmjs/stargate@0.34.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.12.2)(decimal.js@10.6.0)(fuels@0.101.1(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.5)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))
       '@cosmjs/proto-signing': 0.34.0
@@ -5152,7 +5152,7 @@ snapshots:
       '@starkware-industries/starkware-crypto-utils': 0.2.1
       axios: 1.12.2
       decimal.js: 10.6.0
-      es-toolkit: 1.39.10
+      es-toolkit: 1.40.0
       fuels: 0.101.1(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))
       it-ws: 6.1.5(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       long: 5.3.2
@@ -5168,9 +5168,9 @@ snapshots:
       - utf-8-validate
       - vitest
 
-  '@avail-project/nexus-widgets@0.1.11-beta.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(utf-8-validate@5.0.10)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))':
+  '@avail-project/nexus-widgets@0.1.15-beta.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(utf-8-validate@5.0.10)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))':
     dependencies:
-      '@avail-project/nexus-core': 0.0.1-beta.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(utf-8-validate@5.0.10)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))
+      '@avail-project/nexus-core': 0.0.7-beta.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(utf-8-validate@5.0.10)(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.5.2)(jiti@2.6.0)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(tsx@4.20.6))
       '@lottiefiles/dotlottie-react': 0.14.2(react@19.1.1)
       class-variance-authority: 0.7.1
       clsx: 2.1.1
@@ -7329,7 +7329,7 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
-  '@types/secp256k1@4.0.6':
+  '@types/secp256k1@4.0.7':
     dependencies:
       '@types/node': 24.5.2
 
@@ -8815,7 +8815,7 @@ snapshots:
 
   es-toolkit@1.33.0: {}
 
-  es-toolkit@1.39.10: {}
+  es-toolkit@1.40.0: {}
 
   esbuild@0.25.1:
     optionalDependencies:
@@ -9047,7 +9047,7 @@ snapshots:
   ethereum-cryptography@0.1.3:
     dependencies:
       '@types/pbkdf2': 3.1.2
-      '@types/secp256k1': 4.0.6
+      '@types/secp256k1': 4.0.7
       blakejs: 1.2.1
       browserify-aes: 1.2.0
       bs58check: 2.1.2
