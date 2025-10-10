@@ -1,5 +1,6 @@
 import { NexusProvider } from '@avail-project/nexus-widgets'
 import { WagmiProvider } from 'wagmi'
+import { defineChain } from 'viem'
 import {
   base,
   polygon,
@@ -7,6 +8,7 @@ import {
   optimism,
   scroll,
   avalanche,
+  bsc,
   baseSepolia,
   arbitrumSepolia,
   optimismSepolia,
@@ -29,6 +31,19 @@ import {
 
 const walletConnectProjectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
 
+// Hyperliquid HyperEVM custom chain
+const hyperliquid = defineChain({
+  id: 999,
+  name: 'Hyperliquid',
+  nativeCurrency: { name: 'HYPE', symbol: 'HYPE', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['https://rpc.hyperliquid.xyz/evm'] },
+  },
+  blockExplorers: {
+    default: { name: 'HyperEVM Scan', url: 'https://hyperevmscan.io' },
+  },
+})
+
 const config = getDefaultConfig({
   appName: 'Avail Nexus',
   projectId: walletConnectProjectId!,
@@ -40,8 +55,10 @@ const config = getDefaultConfig({
     optimism,
     scroll,
     avalanche,
+    bsc,
     sophon,
     kaia,
+    hyperliquid,
     sepolia,
     baseSepolia,
     arbitrumSepolia,
