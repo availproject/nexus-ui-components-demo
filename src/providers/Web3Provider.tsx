@@ -85,6 +85,7 @@ const sophonWithIcon: RainbowKitChain = {
 const config = getDefaultConfig({
   appName: 'Avail Nexus',
   projectId: walletConnectProjectId!,
+  multiInjectedProviderDiscovery: true,
   chains: [
     mainnet,
     base,
