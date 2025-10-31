@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@avail-project/nexus-widgets':
-        specifier: 0.0.6-beta.1
-        version: 0.0.6-beta.1(bufferutil@4.0.9)(google-protobuf@3.21.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(utf-8-validate@5.0.10)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6))
+        specifier: 0.0.6-beta.2
+        version: 0.0.6-beta.2(bufferutil@4.0.9)(google-protobuf@3.21.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(utf-8-validate@5.0.10)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6))
       '@radix-ui/react-accordion':
         specifier: ^1.2.11
         version: 1.2.12(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -150,13 +150,13 @@ packages:
   '@asamuzakjp/css-color@3.2.0':
     resolution: {integrity: sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw==}
 
-  '@avail-project/nexus-core@0.0.2-beta.7':
-    resolution: {integrity: sha512-XkAUzzOqDSQmufERaTRP/uzZlCRe5tJcvhP1ktVQJe4cyAn2kLvodqUbmjA7kZbf3MMNzOf+TVDGV664IUpzuQ==}
+  '@avail-project/nexus-core@1.0.0-beta.4':
+    resolution: {integrity: sha512-9BKf1/iqkkr62HpDw60R36tcMxS/BSW6Ae88NyIkl38xkqmpz9NW4aIV4BBDU2VttP1wL0/r4kYsxxQB8DiXxA==}
     peerDependencies:
       viem: ^2.0.0
 
-  '@avail-project/nexus-widgets@0.0.6-beta.1':
-    resolution: {integrity: sha512-cL8105MPmR9MxwstK8ZMt5qQNjHl3gXH5Tz+qWutSO7QsXZTjhqzH82x5riJ81v3q0x122y22CXPLIM8f4Ppug==}
+  '@avail-project/nexus-widgets@0.0.6-beta.2':
+    resolution: {integrity: sha512-nphYAEhmu3CdHa0wYWTzWY+sE7BdQyBcmLa1SbJfbK+Xk0Hi1DKfNOpdT7YWkGAfL4D1iQf2QRHgkqjYgmdxMg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1079,6 +1079,9 @@ packages:
 
   '@openpanel/sdk@1.0.0':
     resolution: {integrity: sha512-FNmmfjdXoC/VHEjA+WkrQ4lyM5lxEmV7xDd57uj4E+lIS0sU3DLG2mV/dpS8AscnZbUvuMn3kPhiLCqYzuv/gg==}
+
+  '@openpanel/web@1.0.1':
+    resolution: {integrity: sha512-cVZ7Kr9SicczJ/RDIfEtZs8+1iGDzwkabVA/j3NqSl8VSucsC8m1+LVbjmCDzCJNnK4yVn6tEcc9PJRi2rtllw==}
 
   '@paulmillr/qr@0.2.1':
     resolution: {integrity: sha512-IHnV6A+zxU7XwmKFinmYjUcwlyK9+xkG3/s9KcQhI9BjQKycrJ1JRO+FbNYPwZiPKW3je/DR0k7w8/gLa5eaxQ==}
@@ -5535,12 +5538,13 @@ snapshots:
       '@csstools/css-tokenizer': 3.0.4
       lru-cache: 10.4.3
 
-  '@avail-project/nexus-core@0.0.2-beta.7(bufferutil@4.0.9)(google-protobuf@3.21.4)(utf-8-validate@5.0.10)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6))':
+  '@avail-project/nexus-core@1.0.0-beta.4(bufferutil@4.0.9)(google-protobuf@3.21.4)(utf-8-validate@5.0.10)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6))':
     dependencies:
       '@arcana/ca-common': 1.0.1-alpha.6(@cosmjs/proto-signing@0.34.1)(@cosmjs/stargate@0.34.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.13.1)(decimal.js@10.6.0)(fuels@0.101.1(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.5)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))
       '@cosmjs/proto-signing': 0.34.1
       '@cosmjs/stargate': 0.34.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       '@metamask/safe-event-emitter': 3.1.2
+      '@openpanel/web': 1.0.1
       '@starkware-industries/starkware-crypto-utils': 0.2.1
       axios: 1.13.1
       decimal.js: 10.6.0
@@ -5560,11 +5564,11 @@ snapshots:
       - utf-8-validate
       - vitest
 
-  '@avail-project/nexus-widgets@0.0.6-beta.1(bufferutil@4.0.9)(google-protobuf@3.21.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(utf-8-validate@5.0.10)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6))':
+  '@avail-project/nexus-widgets@0.0.6-beta.2(bufferutil@4.0.9)(google-protobuf@3.21.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(utf-8-validate@5.0.10)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6))':
     dependencies:
-      '@avail-project/nexus-core': 0.0.2-beta.7(bufferutil@4.0.9)(google-protobuf@3.21.4)(utf-8-validate@5.0.10)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6))
+      '@avail-project/nexus-core': 1.0.0-beta.4(bufferutil@4.0.9)(google-protobuf@3.21.4)(utf-8-validate@5.0.10)(viem@2.38.5(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(tsx@4.20.6))
       '@lottiefiles/dotlottie-react': 0.14.2(react@19.2.0)
-      '@openpanel/sdk': 1.0.0
+      '@openpanel/web': 1.0.1
       class-variance-authority: 0.7.1
       clsx: 2.1.1
       decimal.js: 10.4.3
@@ -6725,6 +6729,10 @@ snapshots:
       fastq: 1.19.1
 
   '@openpanel/sdk@1.0.0': {}
+
+  '@openpanel/web@1.0.1':
+    dependencies:
+      '@openpanel/sdk': 1.0.0
 
   '@paulmillr/qr@0.2.1': {}
 
