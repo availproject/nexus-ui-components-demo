@@ -1,19 +1,25 @@
 import { useNexus, type EthereumProvider } from '@avail-project/nexus-widgets'
 import { useEffect } from 'react'
 import { cn } from '@/lib/utils'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { useAccount } from 'wagmi'
+import { ConnectKitButton } from 'connectkit'
+import { useAccount, useWalletClient } from 'wagmi'
 
 export default function WalletConnection() {
   const { setProvider, provider, isSdkInitialized, deinitializeSdk } =
     useNexus()
-  const { status, connector } = useAccount()
+  const { status } = useAccount()
+  const { data: walletClient } = useWalletClient()
 
   const setupProvider = async () => {
     try {
-      const ethProvider = await connector?.getProvider()
+      const ethProvider =
+        walletClient &&
+        ({
+          request: (args: unknown) => walletClient.request(args as any),
+        } as EthereumProvider)
+      console.log('ethProvider', ethProvider)
       if (!ethProvider) return
-      setProvider(ethProvider as EthereumProvider)
+      setProvider(ethProvider)
     } catch (error) {
       console.error('Failed to setup provider:', error)
     }
@@ -36,7 +42,7 @@ export default function WalletConnection() {
         status === 'connected' && 'hidden',
       )}
     >
-      <ConnectButton />
+      <ConnectKitButton />
     </div>
   )
 }
